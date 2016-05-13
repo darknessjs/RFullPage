@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/Rpage.css" type="text/css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <script language="JavaScript" src="js/jquery.js"></script>
+    <script language="JavaScript" src="js/RfullPage.js"></script>
+    <script language="JavaScript" src="js/jquerymousewhell.js"></script>
+</head>
+<body>
+    <div style="height: 300px;">
+        这是最上面的
+    </div>
+    <div class="testpage" style="background: red">
+        第一页
+    </div>
+    <div class="testpage"  style="background: blue">
+        第二页
+    </div>
+    <div class="testpage"  style="background: yellow">
+        第三页
+    </div>
+    <div style="height: 300px;">
+        这是最底部
+    </div>
+</body>
+</html>
+<script language="JavaScript">
+
+    var FullPage=new RfullPage.RnewFullPage();
+
+    $(".testpage").each(function(index,e){
+        FullPage.addnewpage($(this));
+    })
+</script>
