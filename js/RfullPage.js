@@ -80,9 +80,6 @@
 			this.bottomheight=0;
 
 
-
-
-
 			this.addnewpage=function(jquerydiv,title){//添加新页
 				if(this.divarr.length==0){
 					this.topheight=jquerydiv.position().top;
@@ -137,6 +134,8 @@
 					}
 				});
 			}
+
+
 			this.gotopage=function(pagenum,isskipanime){//跳转到指定页
 				if(this.getpage(this.pagenum).outanimefun && this.pagenum!=pagenum){
 					this.getpage(this.pagenum).outanimefun();
@@ -224,12 +223,8 @@
 				if(this.isanime){
 					if(this.animet)
 						window.clearInterval(this.animet);
-					this.animet=window.setInterval(function(){pageobj.gotopage((pageobj.divarr.length==pageobj.pagenum?1:(pageobj.pagenum-(-1))))},5000);
+					this.animet=window.setInterval(function(){pageobj.gotopage((pageobj.divarr.length==pageobj.pagenum?1:(pageobj.pagenum-(-1))))},pageobj.animespeed);
 				}
 			}
-
-
-
-
 		}
 	}(RfullPage);
