@@ -136,6 +136,7 @@
 			}
 
 
+
 			this.gotopage=function(pagenum,isskipanime){//跳转到指定页
 				if(this.getpage(this.pagenum).outanimefun && this.pagenum!=pagenum){
 					this.getpage(this.pagenum).outanimefun();
