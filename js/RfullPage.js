@@ -53,17 +53,15 @@
 			this.setnavulactivecss=function(cssname){
 				this.navulactivecss=cssname;
 			};
-			this.addnav=function(navtext,pagenum,isaddactive){
+			this.addnav=function(navtext,pagenum,isaddactive = true ){
 				if(this.navul){
-					this.navul.append("<li data-page='"+pagenum+"' data-isaddactive='"+(isaddactive!=null?isaddactive:'true')+"'>"+navtext+"</li>")
+					this.navul.append("<li data-page='"+pagenum+"' data-isaddactive='"+isaddactive+"'>"+navtext+"</li>")
 				}
 			};
-
 
 			this.getpage=function(pagenum){//得到对应页的jquery对象
 				return this.divarr[(pagenum-1)];
 			};
-
 		}
 	}(RfullPage),
 
@@ -216,7 +214,6 @@
 				}
 				this.pagenum=pagenum;
 				this.startanime();
-				//this.animet=window.setInterval(function(){pageobj.gotopage((pageobj.divarr.length==pageobj.pagenum?1:(pageobj.pagenum-(-1))))},6000);
 			};
 			this.isanime=true;
 			this.animespeed=5000;

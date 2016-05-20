@@ -8,8 +8,19 @@
     <script language="JavaScript" src="js/jquery.js"></script>
     <script language="JavaScript" src="js/RfullPage.js"></script>
     <script language="JavaScript" src="js/jquerymousewhell.js"></script>
+    <style type="text/css">
+        .liactive{
+            background: red;
+        }
+    </style>
 </head>
 <body>
+
+
+    <ul id="testnav" style="position:fixed;right: 10px; top:50px; background: white;width:50px;">
+
+    </ul>
+
     <div style="height: 300px;">
         这是最上面的
     </div>
@@ -29,9 +40,12 @@
 </html>
 <script language="JavaScript">
 
-    var FullPage=new RfullPage.RnewFullPage();
+    var FullPage=new RfullPage.RnewFullPage($("#testnav"));
+//传入导航ul被选中时的样式
+    FullPage.setnavulactivecss("liactive");
 
     $(".testpage").each(function(index,e){
         FullPage.addnewpage($(this));
+        FullPage.addnav("第"+(index-(-1))+"页",index+1)
     })
 </script>
