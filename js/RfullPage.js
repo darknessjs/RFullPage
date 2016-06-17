@@ -161,6 +161,7 @@
 				});
 			};
 			$(window).bind("resize",function(e) {
+				//页面窗口大小改变时时间
 				if(pageobj.getpage(pageobj.pagenum).animefun){
 					pageobj.getpage(pageobj.pagenum).animefun();
 				}
